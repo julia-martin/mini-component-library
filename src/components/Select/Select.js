@@ -14,7 +14,7 @@ const Select = ({ label, value, onChange, children }) => {
         {children}
       </CustomSelect>
       <IconWrapper>
-        <Icon id="chevron-down" size="12" />
+        <Icon id="chevron-down" size="24" />
       </IconWrapper>
     </Wrapper>
   );
