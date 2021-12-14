@@ -17,18 +17,22 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
       "--borderWidth": "1px",
       "--fontSize": "14px",
       "--width": width + "px",
+      "--marginLeft": "24px"
     },
     large: {
       "--borderWidth": "2px",
       "--fontSize": "18px",
       "--width": width + "px",
+      "--marginLeft": "35px"
     },
   };
 
   return (
     <Wrapper style={SIZE_MAP[size]}>
       <label for="search" style={{ height: 0, visibility: "hidden" }}></label>
-      <Icon id={icon} size={ICON_MAP[size]} name="search" />
+      <IconWrapper>
+        <Icon id={icon} size={ICON_MAP[size]} name="search" />
+      </IconWrapper>
       <Input placeholder={placeholder} />
     </Wrapper>
   );
@@ -42,12 +46,15 @@ const Wrapper = styled.div`
   border-bottom-width: var(--borderWidth);
   font-size: var(--fontSize);
   width: var(--width);
+  padding-bottom: 4px;
+  position: relative;
 `;
 
 const Input = styled.input`
   border: none;
   color: ${COLORS.gray700};
   font-weight: bold;
+  margin-left: var(--marginLeft);
 
   &::placeholder {
     color: ${COLORS.gray500};
@@ -59,8 +66,13 @@ const Input = styled.input`
   }
 
   &:focus {
-    outline-offset: 4px;
+    outline-offset: 8px;
   }
+`;
+
+const IconWrapper = styled.div`
+  display: inline-block;
+  position: absolute;
 `;
 
 export default IconInput;
