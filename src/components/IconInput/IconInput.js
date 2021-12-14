@@ -1,45 +1,37 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { COLORS } from '../../constants';
+import { COLORS } from "../../constants";
 
-import Icon from '../Icon';
-import VisuallyHidden from '../VisuallyHidden';
-
-
+import Icon from "../Icon";
+import VisuallyHidden from "../VisuallyHidden";
 
 const ICON_MAP = {
-  small: '12px',
-  large: '20px'
+  small: "12px",
+  large: "20px",
 };
 
-const IconInput = ({
-  label,
-  icon,
-  width = 250,
-  size,
-  placeholder,
-}) => {
+const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
   const SIZE_MAP = {
     small: {
-      '--borderWidth': '1px',
-      '--fontSize': '14px',
-      '--width': width + 'px'
+      "--borderWidth": "1px",
+      "--fontSize": "14px",
+      "--width": width + "px",
     },
     large: {
-      '--borderWidth': '2px',
-      '--fontSize': '18px',
-      '--width': width + 'px'
-    }
+      "--borderWidth": "2px",
+      "--fontSize": "18px",
+      "--width": width + "px",
+    },
   };
 
   return (
     <Wrapper style={SIZE_MAP[size]}>
-      <label for="search" style={{ height: 0, visibility: 'hidden' }}></label>
+      <label for="search" style={{ height: 0, visibility: "hidden" }}></label>
       <Icon id={icon} size={ICON_MAP[size]} name="search" />
       <Input placeholder={placeholder} />
     </Wrapper>
-  )
+  );
 };
 
 const Wrapper = styled.div`
