@@ -36,6 +36,7 @@ const ProgressBar = ({ value, size }) => {
       aria-valuemin="0"
       aria-valuemax="100"
     >
+      <VisuallyHidden>{value}%</VisuallyHidden>
       <OuterBar style={outerStyle}>
         <InnerBar style={innerStyle} />
       </OuterBar>
